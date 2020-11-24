@@ -45,11 +45,12 @@ spec:
         enabled: true
         existingClaim: nfs-torrents-pvc
         accessMode: ReadWriteMany
+        size: 100Ti
       config:
         enabled: true
         existingClaim: config-flood-pvc
         accessMode: ReadWriteMany
-        size: 1Gi
+        size: 2Gi
 
     probes:
       liveness:
@@ -123,15 +124,3 @@ spec:
           name: config
         - mountPath: /downloads
           name: data
-
-    service:
-      additionalServices:
-        - enabled: false
-          nameSuffix: bt
-          type: LoadBalancer
-          port:
-            port: 49161
-            name: bt
-            protocol: TCP
-            targetPort: bt
-          loadBalancerIP: 10.0.6.57
