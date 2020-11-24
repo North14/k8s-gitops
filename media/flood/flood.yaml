@@ -68,9 +68,6 @@ spec:
         failureThreshold: 30
         periodSeconds: 10
 
-    podAnnotations:
-      backup.velero.io/backup-volumes: config
-
     resources:
       requests:
         memory: 250Mi
@@ -126,10 +123,6 @@ spec:
           name: config
         - mountPath: /downloads
           name: data
-
-    additionalVolumes:
-      - emptyDir: {}
-        name: socket
 
     service:
       additionalServices:
