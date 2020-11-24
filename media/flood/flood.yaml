@@ -78,11 +78,6 @@ spec:
       limits:
         memory: 1500Mi
 
-    additionalVolumeMounts:
-      - mountPath: /tmp
-        name: socket
-
-
     additionalContainers:
       - name: rtorrent
         # image: billimek/alpine-rtorrent:0.9.8-1
