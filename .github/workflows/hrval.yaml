@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Validate Helm v3 in root dir
-        uses: stefanprodan/hrval-action@v2.9.0
+        uses: stefanprodan/hrval-action@master
         with:
           helmRelease: ./
           helmVersion: v3
