@@ -14,11 +14,11 @@ spec:
   chart:
     repository: https://k8s-at-home.com/charts
     name: radarr
-    version: 7.4.0
+    version: 7.7.0
   values:
     image:
       repository: k8sathome/radarr
-      tag: v3.0.4.1011
+      tag: v3.0.0.4204
       # pullPolicy: Always
     env:
       TZ: "America/New_York"

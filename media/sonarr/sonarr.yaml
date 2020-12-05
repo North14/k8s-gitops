@@ -14,11 +14,11 @@ spec:
   chart:
     repository: https://k8s-at-home.com/charts
     name: sonarr
-    version: 7.4.0
+    version: 7.7.0
   values:
     image:
       repository: k8sathome/sonarr
-      tag: v3.0.4.1011
+      tag: v3.0.4.993
       # pullPolicy: Always
     env:
       TZ: "America/New_York"
