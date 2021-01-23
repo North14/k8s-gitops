@@ -21,7 +21,7 @@ spec:
       repository: k8sathome/qbittorrent
       tag: v4.2.5
     env:
-      TZ: "America/New_York"
+      TZ: "Europe/Stockholm"
       PUID: 1000
       PGID: 1000
 #    service:

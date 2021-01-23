@@ -21,7 +21,7 @@ spec:
       tag: v3.0.4.1023
       # pullPolicy: Always
     env:
-      TZ: "America/New_York"
+      TZ: "Europe/Stockholm"
       PUID: 1000
       PGID: 1000
     ingress:
