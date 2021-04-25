@@ -2,15 +2,15 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: bazarr
+  name: sonarr
   namespace: media
 spec:
   interval: 5m
   chart:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
-      chart: bazarr
-      version: 8.0.0
+      chart: sonarr
+      version: 11.0.0
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -18,8 +18,8 @@ spec:
       interval: 5m
   values:
     image:
-      repository: ghcr.io/k8s-at-home/bazarr
-      tag: v0.9.4
+      repository: ghcr.io/k8s-at-home/sonarr
+      tag: v3.0.6.1196
     env:
       TZ: "Europe/Stockholm"
     ingress:
@@ -27,17 +27,17 @@ spec:
       annotations:
         kubernetes.io/ingress.class: "nginx"
       hosts:
-      - host: "bazarr.${SECRET_DOMAIN}"
+      - host: "sonarr.${SECRET_DOMAIN}"
         paths:
         - path: /
           pathType: Prefix
       tls:
       - hosts:
-        - "bazarr.${SECRET_DOMAIN}"
+        - "sonarr.${SECRET_DOMAIN}"
     persistence:
       config:
         enabled: true
-        existingClaim: bazarr-config
+        existingClaim: sonarr-config
     podSecurityContext:
       supplementalGroups:
       - 100
@@ -56,6 +56,6 @@ spec:
     resources:
       requests:
         memory: 200Mi
-        cpu: 150m
+        cpu: 350m
       limits:
         memory: 1500Mi

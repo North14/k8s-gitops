@@ -27,13 +27,13 @@ spec:
       annotations:
         kubernetes.io/ingress.class: "nginx"
       hosts:
-      - host: "torrent.valhalla.internal"
+      - host: "torrent.${SECRET_DOMAIN}"
         paths:
         - path: /
           pathType: Prefix
       tls:
       - hosts:
-        - "torrent.valhalla.internal"
+        - "torrent.${SECRET_DOMAIN}"
     persistence:
       config:
         enabled: true
