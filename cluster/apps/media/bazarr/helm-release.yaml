@@ -44,10 +44,15 @@ spec:
     additionalVolumeMounts:
     - name: torrents
       mountPath: "/torrents"
+    - name: media
+      mountPath: "/media"
     additionalVolumes:
     - name: torrents
       persistentVolumeClaim:
         claimName: nfs-torrents-pvc
+    - name: media
+      persistentVolumeClaim:
+        claimName: nfs-media-pvc
     resources:
       requests:
         memory: 250Mi
