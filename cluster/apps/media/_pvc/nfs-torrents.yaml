@@ -12,7 +12,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: 10.0.10.10
-    path: /torrents
+    path: /srv/nfs/torrents
   mountOptions:
   - nfsvers=3
   - tcp
