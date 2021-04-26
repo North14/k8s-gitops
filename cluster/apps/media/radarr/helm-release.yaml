@@ -34,6 +34,19 @@ spec:
       tls:
       - hosts:
         - "radarr.${SECRET_DOMAIN}"
+      additionalIngresses:
+      - enabled: true
+        nameSuffix: "api"
+        annotations:
+          kubernetes.io/ingress.class: "nginx"
+        hosts:
+        - host: "radarr.${SECRET_DOMAIN}"
+          paths:
+          - path: /api
+            pathType: Prefix
+        tls:
+        - hosts:
+          - "radarr.${SECRET_DOMAIN}"
     persistence:
       config:
         enabled: true
