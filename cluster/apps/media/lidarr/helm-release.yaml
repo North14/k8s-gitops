@@ -34,6 +34,19 @@ spec:
       tls:
       - hosts:
         - "lidarr.${SECRET_DOMAIN}"
+      additionalIngresses:
+      - enabled: true
+        nameSuffix: "api"
+        annotations:
+          kubernetes.io/ingress.class: "nginx"
+        hosts:
+        - host: "lidarr.${SECRET_DOMAIN}"
+          paths:
+          - path: /api
+            pathType: Prefix
+        tls:
+        - hosts:
+          - "lidarr.${SECRET_DOMAIN}"
     persistence:
       config:
         enabled: true
